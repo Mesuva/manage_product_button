@@ -5,7 +5,7 @@ class ManageProductButtonPackage extends Package {
 
 	protected $pkgHandle = 'manage_product_button';
 	protected $appVersionRequired = '5.5.1';
-	protected $pkgVersion = '0.9';
+	protected $pkgVersion = '0.9.1';
 	
 	public function getPackageDescription() {
 		return t("A toolbar button to quickly manage an eCommerce product.");
@@ -35,7 +35,7 @@ class ManageProductButtonPackage extends Package {
 		   $currentProduct = $db->getOne('select productID from CoreCommerceProducts where cID = ?', $id);
 			
 			if ($currentProduct > 0) {	  	
-		   		$ihm->addPageHeaderMenuItem(null, t('Manage Product'), 'left', array('style'=>' background-position: -15px -2212px !important;','class'=>'ccm-menu-icon', 'href' => '/index.php/dashboard/core_commerce/products/search/view_detail/' .  $currentProduct), 'manage_product_button');
+		   		$ihm->addPageHeaderMenuItem(null, t('Manage Product'), 'left', array('style'=>' background-position: -15px -2212px !important;','class'=>'ccm-menu-icon', 'href' => DIR_REL . '/index.php/dashboard/core_commerce/products/search/view_detail/' .  $currentProduct), 'manage_product_button');
 			}
 	 	}   
 	}
